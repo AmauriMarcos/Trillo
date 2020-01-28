@@ -1,0 +1,67 @@
+.container{
+    display: grid;
+    grid-template-rows: 7rem;   
+}
+
+.row{
+
+    display: grid;
+    grid-template-columns: 21.6rem; //repeat(3, 1fr)
+    grid-template-rows: 19.68rem 6.7rem 58.76rem 18.46rem;
+
+    @include responsive (tab-port){
+        grid-template-columns: auto;
+        grid-template-rows: auto ;
+    }
+    
+}
+
+.sidebar{
+    grid-row: 1/5 ; 
+
+    @include responsive (tab-port){
+        grid-column: auto;
+        grid-row: 1/2;
+    }
+}
+
+.hotel-view{
+    grid-column: 2/5;
+    display: flex;
+
+    @include responsive (tab-port){
+        grid-column: auto;
+        grid-row: 2/3;
+    }
+}
+
+.overview{
+    grid-row: 2/3;
+    grid-column: 2/5; 
+
+    @include responsive (tab-port){
+        grid-column: auto;
+        grid-row: 3/4;
+    }
+}
+
+.testimonials{
+    grid-column: 2/5;
+
+    @include responsive (tab-port){
+        grid-column: auto;
+        grid-row: 4/5;
+    }
+}
+
+.cta{
+    grid-column: 2/5;
+    grid-row: 4/5;
+
+    @include responsive (tab-port){
+        grid-column: auto;
+        grid-row: 5/6;
+    }
+}
+
+

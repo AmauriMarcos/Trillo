@@ -1,0 +1,15 @@
+.container{
+    max-width: 120rem;
+    min-height: 50rem;
+    background-color: var(--color-grey-light-2);
+    margin: 8rem auto; 
+    box-shadow: var(--shadow);
+
+    @include responsive(tab-land){      
+        margin: 0;      
+    }
+
+}
+
+
+

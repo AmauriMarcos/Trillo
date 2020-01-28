@@ -1,0 +1,17 @@
+.gallery{
+
+    display: flex;
+
+    &__item {
+
+        &-img{
+            max-width: 100%;      
+            height: 100%;    
+            
+            @include responsive (tab-port){
+                height: auto;
+            }
+        }
+
+    }
+}

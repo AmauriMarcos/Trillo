@@ -1,0 +1,86 @@
+.btn{
+    font-size: 1.4rem !important;
+}
+
+.btn-inline{
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    border-bottom: 1px solid currentColor;
+    background-color: transparent;
+    padding-bottom: 2px;
+    display: inline-block;
+    cursor: pointer;
+
+    & span{
+        margin-left: 3px;
+        display: inline-block;
+        transition: margin-left .2s;
+    }
+
+    &:hover{
+        color: var(--color-grey-dark-1);
+
+        span{
+            margin-left: 8px;
+            
+        }
+    }
+
+    &:focus{
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+
+} 
+
+
+.call-button{
+    border: none;
+    border-radius: 50rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: white;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+
+}
+
+.call-button:hover{
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+}
+
+.call-button:hover .visible{
+    transform: translateY(100%);
+    height: 100%;
+    width: 100%;
+}
+
+.call-button > * {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    transition: all .3s;
+}
+
+.call-button:hover .invisible{
+    top: 0;
+    transition: all .3s;
+}
+
+.visible{
+    padding: 2rem 7.5rem;
+    transform: translateY(0); 
+}
+
+
+.invisible{
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+}

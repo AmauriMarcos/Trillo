@@ -1,0 +1,119 @@
+.sidebar{
+    background-color: var(--color-grey-dark-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.side-nav{
+
+    list-style: none;
+    font-size: 1.4rem;
+    margin-top: 3.5rem ;
+
+    @include responsive (tab-port){
+        display: flex;
+        margin-top: 0;      
+    }
+
+
+    &__item{
+        
+        position: relative;
+
+        @include responsive (tab-port){
+            flex: 1;    
+            margin-bottom: 0 !important; 
+        }
+
+        @include responsive(phone){
+            padding: 1rem;
+        }
+
+
+       &::before{
+           content: "";
+           position: absolute;
+           top: 0;
+           left: 0;
+           height: 100%;
+           width: 3px;
+           background-color: var(--color-primary);
+           transform: scaleY(0);
+           transition:  transform .2s,
+                        width .4s cubic-bezier(1,.01,.02,.99) .2s,
+                        background-color .1s;
+       } 
+
+       &:hover::before{
+           transform: scaleY(1);
+           width: 100%;
+       }
+       
+       &:not(:last-child){
+           margin-bottom: .5rem;
+       }
+
+       &--active{
+           background-color: var(--color-primary); 
+       }
+
+       &:active::before{
+           background-color: var(--color-primary-light); 
+       }
+    }
+
+    &__link:link,
+    &__link:visited{
+        text-decoration: none;
+        color: var(--color-grey-light-1);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 3rem;
+        display: flex;
+        z-index: 10;
+        position: relative;
+
+        @include responsive(phone){
+            flex-direction: column;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+        }
+    }
+
+    &__icon{
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: currentColor;
+        margin-right: 2rem;
+
+        @include responsive(phone){
+           margin-right: 0;
+        }
+   
+    }
+
+    & span{
+        @include responsive(phone){
+            margin-top: 3px;
+        }
+    }
+}
+
+
+/////////////Mini Footer//////////////
+
+.legal{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2.5rem;
+    color: var(--color-grey-light-4);
+
+    @include responsive (tab-port){
+        display: none;
+        
+    }
+
+
+}
